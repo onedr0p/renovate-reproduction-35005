@@ -13,9 +13,3 @@ releases:
     namespace: flux-system
     chart: oci://ghcr.io/controlplaneio-fluxcd/charts/flux-operator
     version: 0.17.0
-
-  - name: flux-instance
-    namespace: flux-system
-    chart: oci://ghcr.io/controlplaneio-fluxcd/charts/flux-instance
-    version: 0.17.0
-    needs: ['flux-system/flux-operator']
