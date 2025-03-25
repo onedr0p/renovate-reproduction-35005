@@ -13,20 +13,3 @@ spec:
   url: oci://ghcr.io/controlplaneio-fluxcd/charts/flux-operator
   verify:
     provider: cosign
----
-apiVersion: helm.toolkit.fluxcd.io/v2
-kind: HelmRelease
-metadata:
-  name: flux-operator
-spec:
-  interval: 1h
-  chartRef:
-    kind: OCIRepository
-    name: flux-operator
-  install:
-    remediation:
-      retries: 3
-  upgrade:
-    cleanupOnFail: true
-    remediation:
-      retries: 3
